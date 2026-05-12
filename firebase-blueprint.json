@@ -1,0 +1,29 @@
+{
+  "entities": {
+    "Report": {
+      "title": "Road Infrastructure Report",
+      "description": "A report of a pothole or broken streetlight.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ticketId": { "type": "string" },
+        "issueType": { "type": "string", "enum": ["POTHOLE", "BROKEN_STREETLIGHT"] },
+        "imageUrl": { "type": "string", "format": "uri" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "address": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string", "format": "email" },
+        "status": { "type": "string", "enum": ["SUBMITTED", "UNDER_REVIEW", "REPAIR_IN_PROGRESS", "RESOLVED"] }
+      },
+      "required": ["ticketId", "issueType", "imageUrl", "latitude", "longitude", "userId", "status"]
+    }
+  },
+  "firestore": {
+    "reports/{reportId}": {
+      "schema": "Report",
+      "description": "Collection of road infrastructure reports."
+    }
+  }
+}

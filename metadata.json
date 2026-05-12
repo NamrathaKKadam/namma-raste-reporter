@@ -1,0 +1,9 @@
+{
+  "name": "Namma-Raste Reporter",
+  "description": "An Android application for reporting infrastructure issues like potholes and broken streetlights with location and image evidence.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
